@@ -10,10 +10,13 @@ const AnecdoteForm = ({store})=>{
   	}
 	
 	return(
-      <form onSubmit={formHandler}>
-        <div><input id='newAnecdote'/></div>
-        <button type='submit'>create</button>
-      </form>	
+		<div>			
+			<h2>create new</h2>		
+			<form onSubmit={formHandler}>
+				<div><input id='newAnecdote'/></div>
+				<button type='submit'>create</button>
+			</form>
+		</div>			
 	)
 }
 
