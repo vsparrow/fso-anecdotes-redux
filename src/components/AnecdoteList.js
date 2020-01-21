@@ -4,7 +4,8 @@ import {addVoteNotification, clearNotification} from '../reducers/notificationRe
 
 const AnecdoteList = ({store})=>{
 	
-	const anecdotes = store.getState().anecdotes
+	// const anecdotes = store.getState().anecdotes
+	const anecdotes = store.getState().anecdotes.filter(a=>a.content.includes(store.getState().filter))
 	const vote = (id) => ()=>{
 		store.dispatch(addVote(id))
 		const anecdote = anecdotes.find(n => n.id === id).content
