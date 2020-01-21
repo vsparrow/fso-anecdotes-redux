@@ -8,10 +8,6 @@ const Notification = ({store}) => {
   }
   return (
     <div style={style}>
-      render here notification...
-	  <br></br>	  
-	  {store.getState().anecdotes.length}
-	  <br></br>	  
 	  {store.getState().notifcation}	  
     </div>
   )
