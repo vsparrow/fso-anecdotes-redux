@@ -10,7 +10,6 @@ const AnecdoteForm = ({store})=>{
 		store.dispatch(addAnecdote(newAnecdote))
 		store.dispatch(addNotification(newAnecdote))
 		setTimeout(()=>store.dispatch(clearNotification()),5000)
-		// setTimeout(()=>console.log('ok here'),2000)
   	}
 	
 	return(
