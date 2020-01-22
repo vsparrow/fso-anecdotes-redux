@@ -12,7 +12,7 @@ const App = (props) => {
     <div>
       <h2>Anecdotes</h2>
 	  <Notification store={store}/>
-	  <Filter store={store}	/>  
+	  <Filter 	/>  
 	  <AnecdoteForm  />
 	  <AnecdoteList store={store} />	  
     </div>
