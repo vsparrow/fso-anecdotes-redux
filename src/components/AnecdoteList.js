@@ -4,7 +4,7 @@ import {addVote} from '../reducers/anecdoteReducer'
 import {addVoteNotification, clearNotification} from '../reducers/notificationReducer'
 
 const AnecdoteList = ({anecdotes, filter,...props})=>{
-		anecdotes
+	const anecdotesToShow =	anecdotes
 		.filter(a=>
 				a.content.toLowerCase().includes(filter.toLowerCase()))
 	const vote = (id) => ()=>{
@@ -17,7 +17,7 @@ const AnecdoteList = ({anecdotes, filter,...props})=>{
 	
 	return(
 		<div>
-			{anecdotes.sort((a,b)=>b.votes-a.votes ).map(anecdote =>
+			{anecdotesToShow.sort((a,b)=>b.votes-a.votes ).map(anecdote =>
 				<div key={anecdote.id}>
 					<div>
 						{anecdote.content}
