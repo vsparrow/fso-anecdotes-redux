@@ -6,15 +6,15 @@ import Filter from './components/Filter'
 
 const App = (props) => {
 
-  const store = props.store
+  // const store = props.store
   // console.log('app state is', store.getState())
   return (
     <div>
       <h2>Anecdotes</h2>
-	  <Notification store={store}/>
+	  <Notification />
 	  <Filter 	/>  
 	  <AnecdoteForm  />
-	  <AnecdoteList store={store} />	  
+	  <AnecdoteList  />	  
     </div>
   )
 }
