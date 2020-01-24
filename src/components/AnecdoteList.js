@@ -6,7 +6,6 @@ import {addVoteNotification, clearNotification} from '../reducers/notificationRe
 const AnecdoteList = ({anecdotes, filter,...props})=>{
 	const vote = (anecdote) => ()=>{
 		props.addVote(anecdote)
-		// const anecdote = anecdotes.find(n => n.id === id)
 		props.addVoteNotification(anecdote.content)
 		setTimeout(()=>props.clearNotification(),5000)
 	}	

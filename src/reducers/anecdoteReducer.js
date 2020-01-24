@@ -8,7 +8,6 @@ const reducer = (state = [], action) => {
 			const filteredState = state.filter(anecdote =>action.data.id !== anecdote.id)
 			return [...filteredState,toUpdate]
 		case 'ADD_ANECDOTE':
-			// const newAnecdote = {content: action.data.content, votes: 0, id: getId()}
 			return [...state, action.data]
 		case 'INIT_NOTES':
 			return action.data
@@ -19,14 +18,10 @@ const reducer = (state = [], action) => {
 }
 
 //action creator
-// export const addVote = (id)=>{
-// 	return ({type: 'ADD_VOTE', data: {id}})
-// }
 export const addVote = anecdote => {
 	return async dispatch => {
-		const updatedAnecdote = (await anecdoteService.addVote(anecdote)).data
-		console.log(updatedAnecdote)
-		dispatch({type: 'ADD_VOTE', data: {id: anecdote.id, votes: anecdote.votes}})//////////
+		const updatedAnecdote = await anecdoteService.addVote(anecdote)
+		dispatch({type: 'ADD_VOTE', data: {id: updatedAnecdote.id, votes: updatedAnecdote.votes}})
 	}
 }
 export const addAnecdote = (content) =>{

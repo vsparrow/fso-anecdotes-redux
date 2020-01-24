@@ -13,13 +13,8 @@ const createNew = async (content)=>{
 }
 
 const addVote = async anecdote => {
-	console.log('anecdote is', anecdote)
 	const newObject = {content: anecdote.content, votes: anecdote.votes+1}
-	// const newObject = {content: anecdote.content, votes: 5}
 	const res = await axios.put(`${baseUrl}/${anecdote.id}`, newObject)
-	//trying patch first
-	// const res = await axios.patch(`${baseUrl}/${anecdote.id}`, {votes: anecdote.vote+1})
-	console.log(res.data)
 	return res.data
 }
 

@@ -4,24 +4,11 @@ import AnecdoteForm from './components/AnecdoteForm'
 import AnecdoteList from './components/AnecdoteList'
 import Notification from './components/Notification'
 import Filter from './components/Filter'
-// import anecdotesService from './services/anecdotes' //remove later
 import {initalizeAnecdotes} from './reducers/anecdoteReducer'
 
 const App =  (props) => {
-	// const test =  ()=>{
-	//   anecdotesService.getAll().then(a=>console.log(a))
-  
-	// }	
-	// test()
 	useEffect(()=>{props.initalizeAnecdotes()},[])	
-  // const store = props.store
-  // console.log('app state is', store.getState())
-  // anecdotesService.createNew('this is a test note')  	
-  // anecdotesService.addVote(    {
-  //     content: "database: If it hurts, do it more often",
-  //     id: 47145,
-  //     votes: 0
-  //   }) // should be 1 vote afterwards  	
+	
   return (
     <div>
       <h2>Anecdotes</h2>
