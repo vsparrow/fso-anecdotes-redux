@@ -16,6 +16,7 @@ const App =  (props) => {
 	useEffect(()=>{props.initalizeAnecdotes()},[])	
   // const store = props.store
   // console.log('app state is', store.getState())
+  // anecdotesService.createNew('this is a test note')  	
   return (
     <div>
       <h2>Anecdotes</h2>
