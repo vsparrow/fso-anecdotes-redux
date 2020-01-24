@@ -1,6 +1,6 @@
 
 const notificationReducer = (state = '', action) => {
-	console.log('notificationReducer state is', state)
+
 	switch(action.type){
 		case 'ADD_MESSAGE':
 			return `you added '${action.message}'`
