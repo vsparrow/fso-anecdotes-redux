@@ -17,6 +17,11 @@ const App =  (props) => {
   // const store = props.store
   // console.log('app state is', store.getState())
   // anecdotesService.createNew('this is a test note')  	
+  // anecdotesService.addVote(    {
+  //     content: "database: If it hurts, do it more often",
+  //     id: 47145,
+  //     votes: 0
+  //   }) // should be 1 vote afterwards  	
   return (
     <div>
       <h2>Anecdotes</h2>

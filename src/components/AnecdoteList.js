@@ -4,10 +4,10 @@ import {addVote} from '../reducers/anecdoteReducer'
 import {addVoteNotification, clearNotification} from '../reducers/notificationReducer'
 
 const AnecdoteList = ({anecdotes, filter,...props})=>{
-	const vote = (id) => ()=>{
-		props.addVote(id)
-		const anecdote = anecdotes.find(n => n.id === id).content
-		props.addVoteNotification(anecdote)
+	const vote = (anecdote) => ()=>{
+		props.addVote(anecdote)
+		// const anecdote = anecdotes.find(n => n.id === id)
+		props.addVoteNotification(anecdote.content)
 		setTimeout(()=>props.clearNotification(),5000)
 	}	
 	
@@ -20,7 +20,7 @@ const AnecdoteList = ({anecdotes, filter,...props})=>{
 					</div>
 					<div>
 						has {anecdote.votes}
-						<button onClick={vote(anecdote.id)}>vote</button>
+						<button onClick={vote(anecdote)}>vote</button>
 					</div>
 				</div>
 			)}
