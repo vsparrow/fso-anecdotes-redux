@@ -1,5 +1,4 @@
 import anecdoteService from '../services/anecdotes'
-const getId = () => (100000 * Math.random()).toFixed(0)
 
 const reducer = (state = [], action) => {
 	switch(action.type){
@@ -23,10 +22,6 @@ const reducer = (state = [], action) => {
 export const addVote = (id)=>{
 	return ({type: 'ADD_VOTE', data: {id}})
 }
-
-// export const addAnecdote = (newAnecdote)=>{ //before database
-// 	return ({type: 'ADD_ANECDOTE', data: {content: newAnecdote}})
-// }
 export const addAnecdote = (content) =>{
 	return async dispatch =>{
 		const newAnecdote = await anecdoteService.createNew(content)
