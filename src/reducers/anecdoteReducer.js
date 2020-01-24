@@ -9,8 +9,8 @@ const reducer = (state = [], action) => {
 			const filteredState = state.filter(anecdote =>action.data.id !== anecdote.id)
 			return [...filteredState,toUpdate]
 		case 'ADD_ANECDOTE':
-			const newAnecdote = {content: action.data.content, votes: 0, id: getId()}
-			return [...state, newAnecdote]
+			// const newAnecdote = {content: action.data.content, votes: 0, id: getId()}
+			return [...state, action.data]
 		case 'INIT_NOTES':
 			return action.data
 		default:
@@ -24,8 +24,14 @@ export const addVote = (id)=>{
 	return ({type: 'ADD_VOTE', data: {id}})
 }
 
-export const addAnecdote = (newAnecdote)=>{
-	return ({type: 'ADD_ANECDOTE', data: {content: newAnecdote}})
+// export const addAnecdote = (newAnecdote)=>{ //before database
+// 	return ({type: 'ADD_ANECDOTE', data: {content: newAnecdote}})
+// }
+export const addAnecdote = (content) =>{
+	return async dispatch =>{
+		const newAnecdote = await anecdoteService.createNew(content)
+		dispatch({type: 'ADD_ANECDOTE', data: newAnecdote})
+	}
 }
 export const initalizeAnecdotes = ()=>{
 	return async dispatch => {

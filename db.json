@@ -34,6 +34,21 @@
       "content": "this is a test note",
       "votes": 0,
       "id": "7sE8wCj"
+    },
+    {
+      "content": "made using createNew",
+      "votes": 0,
+      "id": "kbaBmWT"
+    },
+    {
+      "content": "another value made using createNew",
+      "votes": 0,
+      "id": "dY0vuvJ"
+    },
+    {
+      "content": "wow",
+      "votes": 0,
+      "id": "C1PKThN"
     }
   ]
 }
